@@ -3,15 +3,16 @@
 <div class="row">
     <div class="col-md-12">
       <div class="card mb-9">
-        <h5 class="card-header">Product</h5>
+        <h5 class="card-header">Edit Product</h5>
         <div class="card-body">
           <div>
-            <form action="{{ route('product.insert') }}" method="post" enctype="multipart/form-data">
+            <form action="" method="post" enctype="multipart/form-data">
               @csrf
               <label for="defaultFormControlInput" class="form-label">Name</label>
             <input
               type="text"
               name="name"
+              value="{{ $product->name }}"
               class="form-control"
               id="defaultFormControlInput"
               placeholder="กรุณากรอกชื่อสินค้า"
@@ -22,6 +23,7 @@
             <input
               type="text"
               name="price"
+              value="{{ $product->price }}"
               class="form-control"
               id="defaultFormControlInput"
               placeholder="กรุณากรอกราคาสินค้า"
@@ -32,6 +34,7 @@
             <input
               type="text"
               name="description"
+              value="{{ $product->description }}"
               class="form-control"
               id="defaultFormControlInput"
               placeholder="กรุณากรอกรายละเอียดสินค้า"
@@ -50,8 +53,9 @@
               <div class="input-group">
                 <input type="file" name="image" class="form-control" id="inputGroupFile02" />
                 <label class="input-group-text" for="inputGroupFile02">Upload</label>
-              </div>
-
+              </div> <br>
+              <img src="{{ asset('/admin/upload/product/'.$product->image) }}" width="150px" height="150px" alt="">
+<br><br><br>
             <input class="btn btn-primary mt-3" type="submit" value="บันทึก">
             <a href="{{ route('product.index') }}" class="btn btn-danger mt-3 mx-2">ย้อนกลับ</a>
             </form>
