@@ -6,7 +6,7 @@
         <h5 class="card-header">Edit Product</h5>
         <div class="card-body">
           <div>
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="{{ url('/admin/product/update/'.$product->product_id) }}" method="post" enctype="multipart/form-data">
               @csrf
               <label for="defaultFormControlInput" class="form-label">Name</label>
             <input
@@ -43,7 +43,6 @@
 
             <label for="exampleFormControlSelect1" class="form-label">Category</label>
             <select class="form-select" name="category" id="exampleFormControlSelect1" aria-label="Default select example">
-              <option selected>กรุณาเลือกประเภทสินค้า</option>
               <option value="1">โทรศัพท์มือถือ</option>
               <option value="2">โน๊ตบุ๊ค</option>
               <option value="3">คอมพิวเตอร์ตั้งโต๊ะ</option>

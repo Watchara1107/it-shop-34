@@ -55,5 +55,6 @@ Route::get('/admin/product/create',[ProductController::class, 'createform'])->na
 Route::post('/admin/product/insert',[ProductController::class, 'insert'])->name('product.insert');
 Route::get('/admin/product/delete/{id}',[ProductController::class, 'delete']);
 Route::get('/admin/product/edit/{id}',[ProductController::class, 'edit']);
+Route::post('/admin/product/update/{id}',[ProductController::class, 'update']);
 
 
